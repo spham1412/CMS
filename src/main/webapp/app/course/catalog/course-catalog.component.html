@@ -1,20 +1,29 @@
 <h1>Courses</h1>
 <div>
-  <div *ngFor="let course of courses">
-    <div class="panel panel-info">
-      <div class="panel-heading">{{course.title}} ({{course.id}})</div>
-      <div class="panel-body">
-        {{course.description}}<br>
-        <b>Files</b>
-        <div *ngFor="let file of course.files">
-          <span>{{file}}</span>
-        </div>
+    <div *ngFor="let course of courses" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        {{course.title}} ({{course.id}})
+                    </a>
+                </h5>
+            </div>
 
-        <b>References</b>
-          <div *ngFor="let reference of course.references">
-            <span>{{reference}}</span>
-          </div>
-      </div>
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                    {{course.description}}<br>
+                    <h5>Files</h5>
+                    <div *ngFor="let file of course.files">
+                        <span>{{file}}</span>
+                    </div>
+
+                    <h5>References</h5>
+                    <div *ngFor="let reference of course.references">
+                        <span>{{reference}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
