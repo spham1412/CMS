@@ -8,6 +8,7 @@ import { CmsSharedModule, UserRouteAccessService } from './shared';
 import { CmsHomeModule } from './home/home.module';
 import { CmsAdminModule } from './admin/admin.module';
 import { CmsAccountModule } from './account/account.module';
+import { CmsCourseModule } from './course/course.module';
 import { CmsEntityModule } from './entities/entity.module';
 
 import { customHttpProvider } from './blocks/interceptor/http.provider';
@@ -32,6 +33,7 @@ import {
         CmsHomeModule,
         CmsAdminModule,
         CmsAccountModule,
+        CmsCourseModule,
         CmsEntityModule
     ],
     declarations: [

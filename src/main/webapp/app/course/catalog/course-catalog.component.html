@@ -1,0 +1,20 @@
+<h1>Courses</h1>
+<div>
+  <div *ngFor="let course of courses">
+    <div class="panel panel-info">
+      <div class="panel-heading">{{course.title}} ({{course.id}})</div>
+      <div class="panel-body">
+        {{course.description}}<br>
+        <b>Files</b>
+        <div *ngFor="let file of course.files">
+          <span>{{file}}</span>
+        </div>
+
+        <b>References</b>
+          <div *ngFor="let reference of course.references">
+            <span>{{reference}}</span>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
